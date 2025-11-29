@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruleta Rusa de Agua</title>
+    <link href="./Css/style.css" rel="stylesheet">
+    <script src="js/game.js" defer></script>
+</head>
+<body>
+    <!-- Pantalla de Inicio -->
+    <div class="intro-container animate__animated animate__fadeIn" id="intro">
+        <h1>🎡 Ruleta Rusa de Agua 🔫</h1>
+        <div class="intro-content">
+            <div class="intro-text">
+                <p>¡Bienvenido al juego más peligroso de la web! 💦🔫</p>
+                <ul class="rules">
+                    <li>2 jugadores.</li>
+                    <li>Gira la ruleta y reza por caer en <span class="white-text">BLANCO</span>.</li>
+                    <li>Si cae en <span class="red-text">ROJO</span>, ¡pierdes todos tus puntos!</li>
+                </ul>
+            </div>
+            <div class="player-setup">
+                <h3>Configuración de Jugadores</h3>
+                <div class="player-inputs">
+                    <input type="text" id="player1" placeholder="Jugador 1" autocomplete="off">
+                    <input type="text" id="player2" placeholder="Jugador 2" autocomplete="off">
+                </div>
+                <button id="startGame">¡Comenzar!</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Juego Principal (Oculto al Inicio) -->
+    <div class="game-container" id="game" style="display: none;">
+        <div class="game-container">
+            <h1>🔫 Ruleta Rusa de Agua</h1>
+
+            <div class="scoreboard">
+                <div class="score" id="score1">Jugador 1: 0 pts</div>
+                <div class="score" id="score2">Jugador 2: 0 pts</div>
+                <!-- Opcional: score3 y score4 -->
+            </div>
+            <div class="game-info">
+                <div class="round-counter">Ronda: <span id="round">1</span></div>
+                <div class="event-log" id="eventLog"></div>
+            </div>
+            <div class="revolver-container">
+                <div class="cylinder" id="cylinder">
+                    <div class="chamber" style="--i:1"><span>1</span></div>
+                    <div class="chamber" style="--i:2"><span>2</span></div>
+                    <div class="chamber" style="--i:3"><span>3</span></div>
+                    <div class="chamber" style="--i:4"><span>4</span></div>
+                    <div class="chamber" style="--i:5"><span>5</span></div>
+                    <div class="chamber" style="--i:6"><span>6</span></div>
+                    <div class="center-pin"></div>
+                </div>
+                <div class="marker">⬇</div>
+            </div>
+            <button id="trigger" class="trigger-btn">¡JALAR EL GATILLO! 🔫</button>
+            <button id="restartBtn" class="trigger-btn">🔄 JUGAR OTRA VEZ </button>
+            
+            <div class="players">
+                <div class="player" id="player1">Jugador 1: ✅</div>
+                <div class="player" id="player2">Jugador 2: ✅</div>
+            </div>
+            <div class="messages" id="messages"></div>
+        </div>
+    </div>
+    <div id="customModal" class="modal-overlay" style="display: none;">
+    <div class="modal-box">
+        <h2>⚠️ ¡CUIDADO!</h2>
+        <p id="modalMessage"></p>
+        <button id="closeModalBtn">ENTENDIDO</button>
+    </div>
+</div>
+</body>
+</html>
+</body>
+</html>
+
